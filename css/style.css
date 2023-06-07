@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
 
+:root{
+    --fontePadrao: 'inter';
+    --azulDnc: #0C70F2;
+    --pretoDnc: #303030;
+    --cinzaHover: #C9C9C9;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
+body{
+    /*Aqui estou colocando o fundo da pagina em gradiente*/
+    background: linear-gradient(180deg, rgba(12, 112, 242, 0.5) 19.91%, rgba(12, 112, 242, 0) 45.84%), var(--pretoDnc);
+    background-repeat: no-repeat;
+}
+
 #principal{
     height: 100px;
     border: 1px solid #000000;
-    background-color: #303030;
+    background-color: var(--pretoDnc);
     /*A propriedade flex sempre deve ser utilizada 
     na propriedade do elemento pai ao qual você 
     que que a mudança aconteça*/
@@ -50,7 +63,7 @@
     dizendo que são filhos na sequencia*/
     #principal button{
         margin-right: 5%;
-        background-color: #0c70f2;
+        background-color: var(--azulDnc);
         border: 0;
         height: 40px;
         width: 80px;
@@ -62,4 +75,112 @@
         
         /*Define a mudança do ponteiro do mouse neste caso será a mãozinha*/
         cursor: pointer;
+        
     }
+
+section{
+    display: flex;
+    flex-direction: column;
+    /*Centralizar os componentes Verticalmente*/
+    justify-content: center;
+    /*Organiza horizontalmente */
+    align-items: center;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+    header{
+        color: #ffffff;
+        font-family: var(--fontePadrao);
+    }
+    
+    header h1{
+        font-size: 5rem;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+
+        margin-bottom: 20px;
+    }
+
+    header h2{
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        margin-bottom: 100px;
+    }
+
+    .invert{
+        background-color: var(--pretoDnc);
+        font-weight: bold;
+        padding: 5px;
+
+    }
+
+    /*Formulario*/
+    form{
+        color: #ffffff;
+        font-family: var(--fontePadrao);
+        font-size: 1.875rem;
+        font-weight: 600;
+        width: 600px;
+    }
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        form input{
+            border-radius: 10px;
+            border: 0;
+            height: 1.875rem;
+            padding: 0.625rem;
+            font-size: 1.25rem;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        form label{
+            margin: 1% 0 1% 0;
+        }
+
+        form input::placeholder{
+            color: rgba(57, 57, 57, 0.5);
+        }
+
+        .checkboxItens{
+            display: flex;
+            
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .checkboxItens label{
+            font-size: 1.563rem;
+            
+          
+        }
+
+        /*Esto editando as caracteristicas de todos os chekbox*/
+        input[type="checkbox"]{
+            /*Este comando aumenta a escala do marcador selecionado neste caso checkbox */
+            transform: scale(1.7);
+        }
+
+        input[type="submit"]{
+            background-color: rgba(12, 112, 242, 0.9);
+            width: 100%;
+            margin-top: 60px;
+            color: #ffffff;
+            height: 56px;
+            font-size:  2rem;
+
+            box-shadow: 0px 6px 4px rgba(12, 112, 242, 0.25);
+
+            text-transform: uppercase;
+            cursor: pointer;
+        }
